@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>EDU – gry edukacyjne</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f7fb;
+      color: #263238;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 30px 18px 50px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    h1 {
+      font-size: 42px;
+      margin: 10px 0;
+      color: #315a8a;
+    }
+
+    .subtitle {
+      font-size: 18px;
+      color: #68727d;
+    }
+
+    .section {
+      margin-bottom: 28px;
+    }
+
+    .section-title {
+      font-size: 24px;
+      margin-bottom: 12px;
+      color: #37474f;
+    }
+
+    .games {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 15px;
+    }
+
+    .game {
+      display: block;
+      text-decoration: none;
+      background: white;
+      border-radius: 18px;
+      padding: 22px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+      color: #263238;
+    }
+
+    .icon {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    .game-title {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 6px;
+    }
+
+    .game-description {
+      font-size: 14px;
+      color: #707980;
+      line-height: 1.4;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 45px;
+      color: #9aa1a7;
+      font-size: 13px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <header>
+      <div style="font-size: 50px;">🎓</div>
+      <h1>EDU</h1>
+      <div class="subtitle">Gry i ćwiczenia edukacyjne</div>
+    </header>
+
+    <div class="section">
+
+      <div class="section-title">🇬🇧 Język angielski</div>
+
+      <div class="games">
+
+        <a class="game" href="angielski/">
+          <div class="icon">🇬🇧</div>
+          <div class="game-title">Język angielski</div>
+          <div class="game-description">
+            Gry, quizy i ćwiczenia z języka angielskiego.
+          </div>
+        </a>
+
+      </div>
+    </div>
+
+    <div class="section">
+
+      <div class="section-title">🧪 Chemia</div>
+
+      <div class="games">
+
+        <a class="game" href="chemia/">
+          <div class="icon">🧪</div>
+          <div class="game-title">Chemia</div>
+          <div class="game-description">
+            Gry i ćwiczenia z chemii.
+          </div>
+        </a>
+
+      </div>
+    </div>
+
+    <div class="section">
+
+      <div class="section-title">📚 Inne</div>
+
+      <div class="games">
+
+        <div class="game">
+          <div class="icon">➕</div>
+          <div class="game-title">Kolejne działy</div>
+          <div class="game-description">
+            Tutaj będziemy dodawać kolejne materiały.
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <footer>
+      EDU · gry edu
+    </footer>
+
+  </div>
+
+</body>
+</html>

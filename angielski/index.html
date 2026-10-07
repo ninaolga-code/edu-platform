@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>EDU – Język angielski</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f7fb;
+      color: #263238;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 25px 18px 50px;
+    }
+
+    .back {
+      display: inline-block;
+      margin-bottom: 25px;
+      color: #315a8a;
+      text-decoration: none;
+      font-size: 15px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .icon {
+      font-size: 55px;
+    }
+
+    h1 {
+      font-size: 36px;
+      margin: 10px 0;
+      color: #315a8a;
+    }
+
+    .subtitle {
+      color: #68727d;
+      font-size: 17px;
+    }
+
+    .games {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+    }
+
+    .game {
+      display: block;
+      text-decoration: none;
+      background: white;
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+      color: #263238;
+    }
+
+    .game-icon {
+      font-size: 38px;
+      margin-bottom: 12px;
+    }
+
+    .game-title {
+      font-size: 21px;
+      font-weight: bold;
+      margin-bottom: 7px;
+    }
+
+    .game-description {
+      font-size: 14px;
+      color: #707980;
+      line-height: 1.45;
+    }
+
+    .coming {
+      opacity: 0.6;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 45px;
+      color: #9aa1a7;
+      font-size: 13px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <a class="back" href="../">
+      ← Wróć do EDU
+    </a>
+
+    <header>
+      <div class="icon">🇬🇧</div>
+      <h1>Język angielski</h1>
+      <div class="subtitle">
+        Gry i ćwiczenia
+      </div>
+    </header>
+
+    <div class="games">
+
+      <a class="game" href="memory/">
+        <div class="game-icon">🃏</div>
+        <div class="game-title">Memory – słówka</div>
+        <div class="game-description">
+          Połącz angielskie słówka z ich polskimi odpowiednikami.
+        </div>
+      </a>
+
+      <div class="game coming">
+        <div class="game-icon">✏️</div>
+        <div class="game-title">Quiz – słówka</div>
+        <div class="game-description">
+          Quiz będzie dostępny wkrótce.
+        </div>
+      </div>
+
+      <div class="game coming">
+        <div class="game-icon">🔤</div>
+        <div class="game-title">Fiszki</div>
+        <div class="game-description">
+          Ćwiczenie będzie dostępne wkrótce.
+        </div>
+      </div>
+
+    </div>
+
+    <footer>
+      EDU · Język angielski
+    </footer>
+
+  </div>
+
+</body>
+</html>
