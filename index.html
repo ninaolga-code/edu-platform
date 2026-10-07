@@ -176,20 +176,7 @@
 
         renderItems(item.children || [], children);
 
-      } else if (item.name === "index.html") {
-
-        // index.html otwiera stronę folderu
-        const parentPath = item.path.replace(/\/index\.html$/, "");
-
-        if (parentPath) {
-          const link = document.createElement("a");
-          link.className = "link";
-          link.href = parentPath + "/";
-          link.textContent = "📄 " + formatName(parentPath.split("/").pop());
-
-          wrapper.appendChild(link);
-        }
-      }
+      } 
 
       container.appendChild(wrapper);
     });
