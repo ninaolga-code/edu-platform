@@ -50,18 +50,13 @@
       box-shadow: 0 3px 12px rgba(0,0,0,0.08);
     }
 
-    .item {
-      margin: 5px 0;
-    }
-
     .folder {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 9px;
       padding: 10px 8px;
       font-size: 19px;
       font-weight: bold;
-      cursor: pointer;
       border-radius: 10px;
     }
 
@@ -69,23 +64,15 @@
       background: #f0f4f8;
     }
 
+    .folder a {
+      color: #263238;
+      text-decoration: none;
+    }
+
     .children {
       margin-left: 28px;
       padding-left: 12px;
       border-left: 2px solid #e1e7ec;
-    }
-
-    .link {
-      display: block;
-      padding: 8px;
-      color: #315a8a;
-      text-decoration: none;
-      font-size: 17px;
-      border-radius: 8px;
-    }
-
-    .link:hover {
-      background: #f0f4f8;
     }
 
     .empty {
@@ -131,13 +118,13 @@
     const tree = document.getElementById("tree");
     tree.innerHTML = "";
 
-    renderItems(data, tree);
+    renderFolders(data, tree);
   }
 
-  function renderItems(items, container) {
+  function renderFolders(items, container) {
     items.forEach(item => {
 
-      // Pomijamy pliki techniczne
+      // Pliki techniczne pomijamy.
       if (
         item.name === "tree.json" ||
         item.name === "generate-tree.js" ||
@@ -146,60 +133,25 @@
         return;
       }
 
-      const wrapper = document.createElement("div");
-      wrapper.className = "item";
+      // Pokazujemy tylko foldery.
+      if (item.type !== "folder") {
+        return;
+      }
 
-      if (item.type === "folder") {
+      const folder = document.createElement("div");
 
-        const folder = document.createElement("div");
-        folder.className = "folder";
+      const row = document.createElement("div");
+      row.className = "folder";
 
-        const icon = document.createElement("span");
-        icon.textContent = "📁";
+      const icon = document.createElement("span");
+      icon.textContent = "📁";
 
-        const name = document.createElement("span");
-        name.textContent = formatName(item.name);
+      const link = document.createElement("a");
+      link.href = item.path + "/";
+      link.textContent = formatName(item.name);
 
-        folder.appendChild(icon);
-        folder.appendChild(name);
+      row.appendChild(icon);
+      row.appendChild(link);
+      folder.appendChild(row);
 
-        const children = document.createElement("div");
-        children.className = "children";
-
-        folder.onclick = () => {
-          children.hidden = !children.hidden;
-          icon.textContent = children.hidden ? "📁" : "📂";
-        };
-
-        wrapper.appendChild(folder);
-        wrapper.appendChild(children);
-
-        renderItems(item.children || [], children);
-
-      } 
-
-      container.appendChild(wrapper);
-    });
-  }
-
-  function formatName(name) {
-    const names = {
-      angielski: "Język angielski",
-      chemia: "Chemia",
-      charakter: "Charakter",
-      dom: "Dom",
-      podroze: "Podróże",
-      matematyka: "Matematyka"
-    };
-
-    return names[name.toLowerCase()] || name;
-  }
-
-  loadTree().catch(() => {
-    document.getElementById("tree").innerHTML =
-      '<div class="empty">Nie udało się wczytać struktury EDU.</div>';
-  });
-</script>
-
-</body>
-</html>
+      // Jeśli folder ma
