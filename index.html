@@ -112,7 +112,7 @@
 
 <script>
   async function loadTree() {
-    const response = await fetch("tree.json");
+    const response = await fetch("/tree.json");
     const data = await response.json();
 
     const tree = document.getElementById("tree");
